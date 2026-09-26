@@ -1,6 +1,8 @@
 package org.example.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.model.Customer;
+import org.example.repository.CustomerRepository;
 import org.example.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,18 +11,18 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequiredArgsConstructor
 public class CustomerController {
 
-@Autowired
-    CustomerService service;
+
+    final CustomerService service;
 
 
-//    @GetMapping("/get")
-//    public Customer getCustomer(){
-//
-//        return service.getCustomer();
+//    CustomerService service;
+ //   CustomerRepository customerRepository;
+//    CustomerController(CustomerService service,CustomerRepository  customerrepository){
+//         this.service = service;
 //    }
-
 
     @GetMapping("/get-customer")
     public List<Customer> getCustomers(){
@@ -32,11 +34,18 @@ public class CustomerController {
     public void addCustomer(@RequestBody Customer customer){
         service.addCustomer(customer);
     }
+
     @DeleteMapping("/{id}")
     public void deleteCustomerById(@PathVariable Integer id){
         service.deleteCustomerById(id);
 
     }
+
+    @PostMapping("/addCustomerlist")
+    public void addCustomerListOneTime(@RequestBody List<Customer> customers){
+        service.addCustomer(customers);
+    }
+
 
     @PutMapping
     public void updatecustomer(@RequestBody  Customer customer){
