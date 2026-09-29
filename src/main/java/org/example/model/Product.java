@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Data
 @AllArgsConstructor
@@ -13,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ToString
 @Entity
 @Table(name ="items")
-public class Items {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
     private Integer qty;
-    private String discription;
+    private String description;
+    private Double price;
+    private String availability;
+
 }

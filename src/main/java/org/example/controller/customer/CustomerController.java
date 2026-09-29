@@ -1,17 +1,15 @@
-package org.example.controller;
+package org.example.controller.customer;
 
 import lombok.RequiredArgsConstructor;
 import org.example.model.Customer;
-import org.example.repository.CustomerRepository;
 import org.example.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequiredArgsConstructor
+@CrossOrigin
 public class CustomerController {
 
 

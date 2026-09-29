@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.boot.registry.selector.spi.StrategyCreator;
 
 @Data
 @AllArgsConstructor
@@ -18,11 +17,9 @@ public class Vehical {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private  String vehicalName;
+    private String vehicalName;
     private String type;
-    private  String year;
+    private String year;
     private String numberPlate;
-
-
-
+    private String model;
 }
