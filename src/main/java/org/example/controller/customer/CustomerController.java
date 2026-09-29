@@ -55,5 +55,11 @@ public class CustomerController {
 
     }
 
+    @GetMapping("/get-customer")
+    public Customer getCustomerss(){
+
+        return null;
+    }
+
 
 }
